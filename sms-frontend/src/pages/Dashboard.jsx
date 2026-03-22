@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Sidebar from '../components/Sidebar'
 import Card from '../components/Card'
 import { getStudentCount, getTeacherCount, getCourseCount, getClassroomCount } from '../services/api'
 
@@ -41,14 +40,13 @@ const Dashboard = () => {
 
   return (
     <div className='flex'>
-        <Sidebar/>
         <div className='flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4'>
           {!loading ? (
             <>
-              <Card icon="👨‍🎓" title="Student" count={counts.students} path="/student"/>
-              <Card icon="👨‍🏫" title="Teacher" count={counts.teachers} path="/teacher"/>
-              <Card icon="📚" title="Course" count={counts.courses} path="/course"/>
-              <Card icon="🏫" title="Class" count={counts.classrooms} path="/class"/>
+              <Card icon="👨‍🎓" title="Student" count={counts.students} path="/app/student"/>
+              <Card icon="👨‍🏫" title="Teacher" count={counts.teachers} path="/app/teacher"/>
+              <Card icon="📚" title="Course" count={counts.courses} path="/app/course"/>
+              <Card icon="🏫" title="Class" count={counts.classrooms} path="/app/class"/>
             </>
           ) : (
             <div className='col-span-4 flex justify-center items-center h-40'>

@@ -185,6 +185,35 @@ export const addClassroom = async (classData) => {
   }
 }
 
+// ============= AUTHENTICATION API CALLS =============
+
+const AUTH_API_BASE_URL = 'http://localhost:8080/api/auth'
+
+const authApi = axios.create({
+  baseURL: AUTH_API_BASE_URL,
+  headers: { 'Content-Type': 'application/json' },
+})
+
+export const loginRequest = async (credentials) => {
+  try {
+    const response = await authApi.post('/login', credentials)
+    return response.data
+  } catch (error) {
+    console.error('Error logging in:', error)
+    throw error
+  }
+}
+
+export const registerRequest = async (userData) => {
+  try {
+    const response = await authApi.post('/register', userData)
+    return response.data
+  } catch (error) {
+    console.error('Error registering:', error)
+    throw error
+  }
+}
+
 export const updateClassroom = async (id, classData) => {
   try {
     const response = await classApi.put(`/update/${id}`, classData)

@@ -8,19 +8,19 @@ const Sidebar = () => {
         <House />
         <h1>Home</h1>
       </Link>
-      <Link to="/student" className='flex gap-3 hover:bg-purple-700 rounded py-2 px-3 cursor-pointer transition'>
+      <Link to="/app/student" className='flex gap-3 hover:bg-purple-700 rounded py-2 px-3 cursor-pointer transition'>
         <Users />
         <h1>Students</h1>
       </Link>
-      <Link to="/teacher" className='flex gap-3 hover:bg-purple-700 rounded py-2 px-3 cursor-pointer transition'>
+      <Link to="/app/teacher" className='flex gap-3 hover:bg-purple-700 rounded py-2 px-3 cursor-pointer transition'>
         <Users />
         <h1>Teachers</h1>
       </Link>
-      <Link to="/course" className='flex gap-3 hover:bg-purple-700 rounded py-2 px-3 cursor-pointer transition'>
+      <Link to="/app/course" className='flex gap-3 hover:bg-purple-700 rounded py-2 px-3 cursor-pointer transition'>
         <GraduationCap />
         <h1>Courses</h1>
       </Link>
-      <Link to="/class" className='flex gap-3 hover:bg-purple-700 rounded py-2 px-3 cursor-pointer transition'>
+      <Link to="/app/class" className='flex gap-3 hover:bg-purple-700 rounded py-2 px-3 cursor-pointer transition'>
         <BookOpen />
         <h1>Classes</h1>
       </Link>
