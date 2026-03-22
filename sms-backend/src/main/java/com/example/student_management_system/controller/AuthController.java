@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.student_management_system.model.dto.AuthResponse;
 import com.example.student_management_system.model.entity.User;
 import com.example.student_management_system.services.UserService;
 
@@ -20,16 +21,14 @@ public class AuthController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user) {
-        User saved = userService.register(user);
-        saved.setPassword(user.getPassword());
-        saved.setUsername(user.getUsername());
-        return ResponseEntity.ok(saved);
+    public ResponseEntity<AuthResponse> register(@RequestBody User user) {
+        AuthResponse response = userService.register(user);
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User user) {
-        String result = userService.login(user);
-        return ResponseEntity.ok(result);
-    }
+public ResponseEntity<AuthResponse> login(@RequestBody User user) {
+    AuthResponse response = userService.login(user);
+    return ResponseEntity.ok(response);
+}
 }
